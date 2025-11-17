@@ -2,7 +2,7 @@
 <html lang="zh-HK">
 <head>
   <meta charset="UTF-8">
-  <title>AI + Programming 課程簡介</title>
+  <title>AI + Programming 課程簡介 & GitHub Pages 教學</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -57,7 +57,7 @@
       margin-bottom: 16px;
     }
 
-    header .tagline {
+    header p.tagline {
       font-size: 0.95rem;
       color: #d1d5db;
       margin-bottom: 20px;
@@ -103,6 +103,13 @@
       font-size: 1.3rem;
     }
 
+    h3 {
+      font-size: 1.05rem;
+      margin-top: 12px;
+      margin-bottom: 6px;
+      color: #e5e7eb;
+    }
+
     ul {
       margin-left: 1.2rem;
       margin-top: 4px;
@@ -112,6 +119,17 @@
     ul li {
       margin-bottom: 4px;
       font-size: 0.98rem;
+    }
+
+    ol {
+      margin-left: 1.2rem;
+      margin-top: 4px;
+      margin-bottom: 8px;
+    }
+
+    ol li {
+      margin-bottom: 4px;
+      font-size: 0.96rem;
     }
 
     .section {
@@ -236,6 +254,36 @@
       flex-wrap: wrap;
     }
 
+    .docx-section {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px dashed rgba(55, 65, 81, 0.9);
+    }
+
+    .docx-box {
+      margin-top: 8px;
+      padding: 14px 14px 16px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+    }
+
+    .docx-box strong.label {
+      display: inline-block;
+      font-size: 0.9rem;
+      color: #a5b4fc;
+      margin-bottom: 4px;
+    }
+
+    .inline-code {
+      font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 6px;
+      padding: 2px 6px;
+      font-size: 0.9em;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+    }
+
     @media (max-width: 640px) {
       .page {
         margin: 20px auto;
@@ -338,7 +386,7 @@
       <!-- 下載 Word 檔 -->
       <section class="download-section">
         <div class="download-text">
-          📄 上課前的準備金文件（.docx）：
+          📄 如想睇 <strong>詳細教學步驟／筆記</strong>，可以下載課程 Word 檔案（.docx）：
         </div>
         <a class="btn-download" href="GitHub.docx" target="_blank">
           <span class="icon">⬇️</span>
@@ -346,8 +394,105 @@
         </a>
       </section>
 
+      <!-- DOCX 內容：GitHub Pages 設定教學 -->
+      <section class="docx-section">
+        <h2><span class="icon">📘</span>GitHub Pages 設定教學（由 DOCX 轉換）</h2>
+
+        <div class="docx-box">
+          <strong class="label">步驟 1：準備帳戶</strong>
+          <ul>
+            <li>（可選）如需要用 VPN 先去台灣地區，再申請一個 <strong>Gmail 帳戶</strong>。</li>
+            <li>用呢個 Gmail 帳戶去開一個 <strong>GitHub 帳戶</strong>。</li>
+          </ul>
+        </div>
+
+        <div class="docx-box">
+          <strong class="label">步驟 2：登入 GitHub</strong>
+          <ol>
+            <li>開瀏覽器，去：<br>
+              <span class="inline-code">https://github.com/</span>
+            </li>
+            <li>登入你嘅 GitHub 帳戶。</li>
+            <li>右上角按 <strong>「＋」 → New repository</strong>。</li>
+          </ol>
+        </div>
+
+        <div class="docx-box">
+          <strong class="label">步驟 3：建立 GitHub Pages 專用 Repository</strong>
+          <ol>
+            <li>Repository Name 輸入：<br>
+              <span class="inline-code">yourname.github.io</span><br>
+              例子：如果你 GitHub 名叫 <span class="inline-code">canaaneyecare</span>，就輸入：<br>
+              <span class="inline-code">canaaneyecare.github.io</span>
+            </li>
+            <li>Visibility 選擇：<strong>Public（必須揀 Public）</strong></li>
+            <li>勾選：<strong>Add a README file</strong></li>
+            <li>按 <strong>Create repository</strong>。</li>
+          </ol>
+        </div>
+
+        <div class="docx-box">
+          <strong class="label">步驟 4：開啟 GitHub Pages</strong>
+          <ol>
+            <li>進入你啱啱開嘅 repo，按上面嘅 <strong>Settings</strong>。</li>
+            <li>左邊欄搵：<strong>Pages</strong>。</li>
+            <li>喺 <strong>Build and deployment</strong> → <strong>Source</strong>，揀：<br>
+              <span class="inline-code">Deploy from a branch</span>
+            </li>
+            <li>Branch 選擇：<span class="inline-code">main / (root)</span></li>
+            <li>按 <strong>Save</strong>。</li>
+            <li>Save 完之後，大約 <strong>30 秒 ~ 1 分鐘</strong>，網站就會自動生成。</li>
+          </ol>
+        </div>
+
+        <div class="docx-box">
+          <strong class="label">步驟 5：建立首頁 index.html</strong>
+          <ol>
+            <li>返回 repo 主頁，按 <strong>「&lt;&gt; Code」</strong> 頁。</li>
+            <li>按 <strong>Add file → Create new file</strong>。</li>
+            <li>檔案名稱（Filename）輸入：<br>
+              <span class="inline-code">index.html</span>
+            </li>
+            <li>內容可以先用一個最簡單模版（例如）：</li>
+          </ol>
+
+          <pre class="inline-code" style="display:block; white-space:pre; overflow-x:auto; margin-top:6px;">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-HK"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;我的 GitHub Pages 網站&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;你好！GitHub Pages 已經成功運作 🎉&lt;/h1&gt;
+  &lt;p&gt;呢度係我嘅第一個 GitHub Pages 頁面。&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+          </pre>
+
+          <ol start="5">
+            <li>落到頁面底，按 <strong>Commit changes</strong> 儲存。</li>
+          </ol>
+        </div>
+
+        <div class="docx-box">
+          <strong class="label">步驟 6：確認網站網址</strong>
+          <ol>
+            <li>可以再去一次 <strong>Settings → Pages</strong>。</li>
+            <li>你會見到 GitHub Pages 顯示你嘅網站網址，例如：<br>
+              <span class="inline-code">https://yourname.github.io/</span>
+            </li>
+            <li>喺瀏覽器打入呢個網址，就可以見到你啱啱整嘅 <strong>index.html</strong> 頁面。</li>
+          </ol>
+        </div>
+
+        <p class="note">
+          以上內容係根據你提供嘅 Word 檔整理而成，已經轉成網站上易讀嘅 HTML 版本（並移除敏感登入資料）。 :contentReference[oaicite:0]{index=0}
+        </p>
+      </section>
+
       <footer>
-        <span>版本：MVP 課程簡介頁（GitHub Pages 示範）</span>
+        <span>版本：MVP 課程簡介 + GitHub Pages 教學</span>
         <span>更新：可按需要自由修改內容同設計</span>
       </footer>
     </div>
