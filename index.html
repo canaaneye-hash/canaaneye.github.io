@@ -2,7 +2,7 @@
 <html lang="zh-HK">
 <head>
   <meta charset="UTF-8">
-  <title>AI + Programming 課程簡介 & GitHub Pages 教學</title>
+  <title>AI + Programming 課程簡介 & 文件預覽</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -20,17 +20,17 @@
     }
 
     .page {
-      max-width: 980px;
-      margin: 40px auto;
-      padding: 24px;
+      max-width: 1080px;
+      margin: 32px auto 40px;
+      padding: 0 16px;
     }
 
     .card {
       background: rgba(15, 23, 42, 0.96);
-      border-radius: 16px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
-      padding: 28px 24px 32px;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
+      padding: 26px 22px 28px;
       backdrop-filter: blur(10px);
     }
 
@@ -42,28 +42,28 @@
       gap: 10px;
     }
 
-    header h1 span.logo-dot {
+    header h1 .logo-dot {
       width: 12px;
       height: 12px;
       border-radius: 999px;
       background: linear-gradient(135deg, #38bdf8, #a855f7, #f97316);
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
-      display: inline-block;
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.9);
+      flex-shrink: 0;
     }
 
-    header p.subtitle {
+    header .subtitle {
       font-size: 0.95rem;
       color: #9ca3af;
+      margin-bottom: 4px;
+    }
+
+    header .tagline {
+      font-size: 0.95rem;
+      color: #d1d5db;
       margin-bottom: 16px;
     }
 
-    header p.tagline {
-      font-size: 0.95rem;
-      color: #d1d5db;
-      margin-bottom: 20px;
-    }
-
-    header .badge-row {
+    .badge-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -74,73 +74,52 @@
       font-size: 0.8rem;
       padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: rgba(15, 23, 42, 0.9);
       color: #e5e7eb;
-      background: rgba(15, 23, 42, 0.7);
     }
 
     .badge.primary {
-      border-color: rgba(56, 189, 248, 0.9);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), rgba(15, 23, 42, 0.9));
+      border-color: rgba(56, 189, 248, 0.95);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), rgba(15, 23, 42, 0.95));
     }
 
     hr {
       border: none;
       border-top: 1px dashed rgba(55, 65, 81, 0.9);
-      margin: 20px 0;
+      margin: 18px 0;
     }
 
     h2 {
       font-size: 1.3rem;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 8px;
-      color: #e5e7eb;
     }
 
-    h2 span.icon {
-      font-size: 1.3rem;
+    h2 .icon {
+      font-size: 1.25rem;
     }
 
-    h3 {
-      font-size: 1.05rem;
-      margin-top: 12px;
-      margin-bottom: 6px;
-      color: #e5e7eb;
+    .section {
+      margin-bottom: 14px;
     }
 
     ul {
       margin-left: 1.2rem;
       margin-top: 4px;
-      margin-bottom: 8px;
     }
 
     ul li {
       margin-bottom: 4px;
-      font-size: 0.98rem;
-    }
-
-    ol {
-      margin-left: 1.2rem;
-      margin-top: 4px;
-      margin-bottom: 8px;
-    }
-
-    ol li {
-      margin-bottom: 4px;
-      font-size: 0.96rem;
-    }
-
-    .section {
-      margin-top: 12px;
-      margin-bottom: 12px;
+      font-size: 0.97rem;
     }
 
     .note {
       font-size: 0.9rem;
       color: #9ca3af;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     /* 課程表格 */
@@ -153,7 +132,7 @@
       width: 100%;
       border-collapse: collapse;
       margin-top: 2px;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
     }
 
     th, td {
@@ -163,28 +142,26 @@
     }
 
     th {
-      background: rgba(15, 118, 110, 0.35);
-      color: #e5e7eb;
-      border-bottom: 1px solid rgba(45, 212, 191, 0.5);
+      background: rgba(15, 118, 110, 0.4);
+      border-bottom: 1px solid rgba(45, 212, 191, 0.6);
       font-weight: 600;
     }
 
     tr:nth-child(even) td {
-      background: rgba(15, 23, 42, 0.95);
+      background: rgba(15, 23, 42, 0.96);
     }
 
     tr:nth-child(odd) td {
-      background: rgba(15, 23, 42, 0.8);
+      background: rgba(15, 23, 42, 0.86);
     }
 
     td {
-      border-bottom: 1px solid rgba(55, 65, 81, 0.7);
+      border-bottom: 1px solid rgba(55, 65, 81, 0.85);
     }
 
     .lesson-title {
       white-space: nowrap;
       font-weight: 600;
-      color: #e5e7eb;
     }
 
     .tools {
@@ -195,113 +172,104 @@
       color: #fef3c7;
     }
 
-    /* 下載區域 */
-    .download-section {
-      margin-top: 18px;
-      padding-top: 14px;
-      border-top: 1px dashed rgba(55, 65, 81, 0.9);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      justify-content: space-between;
+    /* DOCX viewer 區域 */
+    .viewer-section {
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px dashed rgba(55, 65, 81, 0.95);
     }
 
-    .download-text {
-      font-size: 0.9rem;
-      color: #9ca3af;
+    .viewer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .viewer-header-text {
+      font-size: 0.95rem;
+      color: #e5e7eb;
     }
 
     .btn-download {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 14px;
+      padding: 7px 14px;
       border-radius: 999px;
       border: none;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 500;
       background: linear-gradient(135deg, #38bdf8, #4f46e5);
       color: #f9fafb;
-      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.6);
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.72);
       cursor: pointer;
       transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+      white-space: nowrap;
     }
 
-    .btn-download span.icon {
+    .btn-download .icon {
       font-size: 1.1rem;
     }
 
     .btn-download:hover {
       transform: translateY(-1px);
       filter: brightness(1.05);
-      box-shadow: 0 14px 35px rgba(37, 99, 235, 0.8);
+      box-shadow: 0 14px 32px rgba(37, 99, 235, 0.9);
     }
 
     .btn-download:active {
-      transform: translateY(0px) scale(0.99);
-      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.7);
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.85);
+    }
+
+    .viewer-box {
+      border-radius: 14px;
+      border: 1px solid rgba(75, 85, 99, 0.95);
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+      background: #000;
+    }
+
+    iframe {
+      width: 100%;
+      height: 780px;
+      border: none;
+      background: #111827;
+    }
+
+    .viewer-note {
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: #9ca3af;
+      text-align: center;
     }
 
     footer {
-      margin-top: 16px;
+      margin-top: 18px;
       font-size: 0.8rem;
       color: #6b7280;
       display: flex;
       justify-content: space-between;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
-    .docx-section {
-      margin-top: 22px;
-      padding-top: 18px;
-      border-top: 1px dashed rgba(55, 65, 81, 0.9);
-    }
-
-    .docx-box {
-      margin-top: 8px;
-      padding: 14px 14px 16px;
-      border-radius: 12px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(75, 85, 99, 0.9);
-    }
-
-    .docx-box strong.label {
-      display: inline-block;
-      font-size: 0.9rem;
-      color: #a5b4fc;
-      margin-bottom: 4px;
-    }
-
-    .inline-code {
-      font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      background: rgba(15, 23, 42, 0.9);
-      border-radius: 6px;
-      padding: 2px 6px;
-      font-size: 0.9em;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-    }
-
-    @media (max-width: 640px) {
-      .page {
-        margin: 20px auto;
-        padding: 16px;
-      }
-
+    @media (max-width: 768px) {
       .card {
-        padding: 18px 16px 22px;
+        padding: 20px 16px 22px;
       }
 
       header h1 {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         flex-wrap: wrap;
       }
 
-      .download-section {
-        flex-direction: column;
-        align-items: flex-start;
+      iframe {
+        height: 560px;
       }
     }
   </style>
@@ -320,7 +288,7 @@
         <div class="badge-row">
           <span class="badge primary">🎯 4 堂完成 1 個 MVP 成品</span>
           <span class="badge">🤖 AI + 編輯技能</span>
-          <span class="badge">🌱 適合教會長期使用</span>
+          <span class="badge">🌱 教會同工可自行維護更新</span>
         </div>
       </header>
 
@@ -332,12 +300,12 @@
         <ul>
           <li>讓弟兄姊妹學識 <strong>最基本、最有用嘅 5 個工具</strong>。</li>
           <li><strong>4 堂內</strong> 完成一個教會可用嘅 MVP 成品（影片 / PowerPoint / 教材 / 海報 / 簡單 app…）。</li>
-          <li>培養 <strong>AI + 編輯能力 + version control</strong> 嘅基本概念。</li>
-          <li>之後返到教會，可以自己維護同更新作品，<strong>唔洗次次搵 IT / 專業設計</strong>。</li>
+          <li>培養 <strong>AI + 編輯能力 + Version Control</strong> 嘅基本概念。</li>
+          <li>之後返到教會，可以自己維護同更新作品，唔洗次次搵 IT / 專業設計。</li>
         </ul>
       </section>
 
-      <!-- 課程結構 -->
+      <!-- 課程 4 堂結構 -->
       <section class="section">
         <h2><span class="icon">🧭</span>課程 4 堂結構（簡明版）</h2>
 
@@ -380,120 +348,37 @@
           </table>
         </div>
 
-        <p class="note">＊每一堂都會有簡單實作，學員可以即場跟住做，返到教會都可以再慢慢改。</p>
+        <p class="note">＊每一堂都有實作，學員可以即場跟住做，返到教會可以再慢慢修改同延伸。</p>
       </section>
 
-      <!-- 下載 Word 檔 -->
-      <section class="download-section">
-        <div class="download-text">
-          📄 如想睇 <strong>詳細教學步驟／筆記</strong>，可以下載課程 Word 檔案（.docx）：
-        </div>
-        <a class="btn-download" href="GitHub.docx" target="_blank">
-          <span class="icon">⬇️</span>
-          <span>下載課程詳細說明（Word）</span>
-        </a>
-      </section>
-
-      <!-- DOCX 內容：GitHub Pages 設定教學 -->
-      <section class="docx-section">
-        <h2><span class="icon">📘</span>GitHub Pages 設定教學（由 DOCX 轉換）</h2>
-
-        <div class="docx-box">
-          <strong class="label">步驟 1：準備帳戶</strong>
-          <ul>
-            <li>（可選）如需要用 VPN 先去台灣地區，再申請一個 <strong>Gmail 帳戶</strong>。</li>
-            <li>用呢個 Gmail 帳戶去開一個 <strong>GitHub 帳戶</strong>。</li>
-          </ul>
+      <!-- DOCX Viewer 區 -->
+      <section class="viewer-section">
+        <div class="viewer-header">
+          <div class="viewer-header-text">
+            <strong>📄 課程詳細筆記（DOCX 線上預覽）</strong><br>
+            下面可以直接線上睇 Word 課程筆記，如需要亦可以下載返自己電腦慢慢睇。
+          </div>
+          <a class="btn-download" href="GitHub.docx" target="_blank">
+            <span class="icon">⬇️</span>
+            <span>下載 Word 檔</span>
+          </a>
         </div>
 
-        <div class="docx-box">
-          <strong class="label">步驟 2：登入 GitHub</strong>
-          <ol>
-            <li>開瀏覽器，去：<br>
-              <span class="inline-code">https://github.com/</span>
-            </li>
-            <li>登入你嘅 GitHub 帳戶。</li>
-            <li>右上角按 <strong>「＋」 → New repository</strong>。</li>
-          </ol>
+        <div class="viewer-box">
+          <iframe
+            src="https://docs.google.com/gview?url=https://canaaneye-hash.github.io/canaaneye.github.io/GitHub.docx&embedded=true">
+          </iframe>
         </div>
 
-        <div class="docx-box">
-          <strong class="label">步驟 3：建立 GitHub Pages 專用 Repository</strong>
-          <ol>
-            <li>Repository Name 輸入：<br>
-              <span class="inline-code">yourname.github.io</span><br>
-              例子：如果你 GitHub 名叫 <span class="inline-code">canaaneyecare</span>，就輸入：<br>
-              <span class="inline-code">canaaneyecare.github.io</span>
-            </li>
-            <li>Visibility 選擇：<strong>Public（必須揀 Public）</strong></li>
-            <li>勾選：<strong>Add a README file</strong></li>
-            <li>按 <strong>Create repository</strong>。</li>
-          </ol>
-        </div>
-
-        <div class="docx-box">
-          <strong class="label">步驟 4：開啟 GitHub Pages</strong>
-          <ol>
-            <li>進入你啱啱開嘅 repo，按上面嘅 <strong>Settings</strong>。</li>
-            <li>左邊欄搵：<strong>Pages</strong>。</li>
-            <li>喺 <strong>Build and deployment</strong> → <strong>Source</strong>，揀：<br>
-              <span class="inline-code">Deploy from a branch</span>
-            </li>
-            <li>Branch 選擇：<span class="inline-code">main / (root)</span></li>
-            <li>按 <strong>Save</strong>。</li>
-            <li>Save 完之後，大約 <strong>30 秒 ~ 1 分鐘</strong>，網站就會自動生成。</li>
-          </ol>
-        </div>
-
-        <div class="docx-box">
-          <strong class="label">步驟 5：建立首頁 index.html</strong>
-          <ol>
-            <li>返回 repo 主頁，按 <strong>「&lt;&gt; Code」</strong> 頁。</li>
-            <li>按 <strong>Add file → Create new file</strong>。</li>
-            <li>檔案名稱（Filename）輸入：<br>
-              <span class="inline-code">index.html</span>
-            </li>
-            <li>內容可以先用一個最簡單模版（例如）：</li>
-          </ol>
-
-          <pre class="inline-code" style="display:block; white-space:pre; overflow-x:auto; margin-top:6px;">
-&lt;!DOCTYPE html&gt;
-&lt;html lang="zh-HK"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;我的 GitHub Pages 網站&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;你好！GitHub Pages 已經成功運作 🎉&lt;/h1&gt;
-  &lt;p&gt;呢度係我嘅第一個 GitHub Pages 頁面。&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-          </pre>
-
-          <ol start="5">
-            <li>落到頁面底，按 <strong>Commit changes</strong> 儲存。</li>
-          </ol>
-        </div>
-
-        <div class="docx-box">
-          <strong class="label">步驟 6：確認網站網址</strong>
-          <ol>
-            <li>可以再去一次 <strong>Settings → Pages</strong>。</li>
-            <li>你會見到 GitHub Pages 顯示你嘅網站網址，例如：<br>
-              <span class="inline-code">https://yourname.github.io/</span>
-            </li>
-            <li>喺瀏覽器打入呢個網址，就可以見到你啱啱整嘅 <strong>index.html</strong> 頁面。</li>
-          </ol>
-        </div>
-
-        <p class="note">
-          以上內容係根據你提供嘅 Word 檔整理而成，已經轉成網站上易讀嘅 HTML 版本（並移除敏感登入資料）。 :contentReference[oaicite:0]{index=0}
+        <p class="viewer-note">
+          如預覽畫面冇顯示：<br>
+          ① 檢查檔案係咪叫 <code>GitHub.docx</code> 並已上載到 repo 根目錄；② 再 Reload 一次；③ 確保可以連到 Google 服務。
         </p>
       </section>
 
       <footer>
-        <span>版本：MVP 課程簡介 + GitHub Pages 教學</span>
-        <span>更新：可按需要自由修改內容同設計</span>
+        <span>AI + Programming 教會實戰課程 · GitHub Pages 示範頁</span>
+        <span>可按堂數內容自由修改、增刪章節</span>
       </footer>
     </div>
   </div>
