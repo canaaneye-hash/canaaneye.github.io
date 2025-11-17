@@ -2,7 +2,7 @@
 <html lang="zh-HK">
 <head>
   <meta charset="UTF-8">
-  <title>AI + Programming 課程簡介 & 文件預覽</title>
+  <title>AI + Programming 課程簡介 & 課前預備工作</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -172,7 +172,46 @@
       color: #fef3c7;
     }
 
-    /* DOCX viewer 區域 */
+    /* 報名按鈕 */
+    .signup-section {
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn-signup {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: none;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #f9fafb;
+      box-shadow: 0 14px 30px rgba(22, 163, 74, 0.9);
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    }
+
+    .btn-signup .icon {
+      font-size: 1.2rem;
+    }
+
+    .btn-signup:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 18px 38px rgba(22, 163, 74, 1);
+    }
+
+    .btn-signup:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 8px 18px rgba(22, 163, 74, 0.9);
+    }
+
+    /* Viewer 區域 */
     .viewer-section {
       margin-top: 22px;
       padding-top: 16px;
@@ -292,6 +331,14 @@
         </div>
       </header>
 
+      <!-- 報名按鈕 -->
+      <div class="signup-section">
+        <a class="btn-signup" href="https://forms.gle/pLa8Yqc3io3Mx4j1A" target="_blank">
+          <span class="icon">📝</span>
+          <span>立即報名課程（Google 表格）</span>
+        </a>
+      </div>
+
       <hr>
 
       <!-- 課程總目標 -->
@@ -351,34 +398,34 @@
         <p class="note">＊每一堂都有實作，學員可以即場跟住做，返到教會可以再慢慢修改同延伸。</p>
       </section>
 
-      <!-- DOCX Viewer 區 -->
+      <!-- 課前預備工作 Viewer 區 -->
       <section class="viewer-section">
         <div class="viewer-header">
           <div class="viewer-header-text">
-            <strong>📄 課程詳細筆記（DOCX 線上預覽）</strong><br>
-            下面可以直接線上睇 Word 課程筆記，如需要亦可以下載返自己電腦慢慢睇。
+            <strong>📄 課前預備工作（PDF 線上預覽）</strong><br>
+            上堂前建議先按步驟完成以下設定（GitHub / Gmail 等），方便第一課可以即刻開始實作。
           </div>
-          <a class="btn-download" href="GitHub.docx" target="_blank">
+          <a class="btn-download" href="GitHub.pdf" target="_blank">
             <span class="icon">⬇️</span>
-            <span>下載 Word 檔</span>
+            <span>下載課前預備 PDF</span>
           </a>
         </div>
 
         <div class="viewer-box">
-          <iframe
-            src="https://docs.google.com/gview?url=https://canaaneye-hash.github.io/canaaneye.github.io/GitHub.docx&embedded=true">
-          </iframe>
+          <!-- 直接預覽 GitHub.pdf（由 Word 另存 PDF 上載） -->
+          <iframe src="GitHub.pdf"></iframe>
         </div>
 
         <p class="viewer-note">
-          如預覽畫面冇顯示：<br>
-          ① 檢查檔案係咪叫 <code>GitHub.docx</code> 並已上載到 repo 根目錄；② 再 Reload 一次；③ 確保可以連到 Google 服務。
+          如畫面未能顯示或出現錯誤：<br>
+          ① 請確認已將 Word 另存為 <code>GitHub.pdf</code> 並上載到 repo 根目錄；<br>
+          ② 檢查檔名大小寫；③ 再重新整理（Reload）此頁。
         </p>
       </section>
 
       <footer>
         <span>AI + Programming 教會實戰課程 · GitHub Pages 示範頁</span>
-        <span>可按堂數內容自由修改、增刪章節</span>
+        <span>內容可按教會實際需要自由調整</span>
       </footer>
     </div>
   </div>
