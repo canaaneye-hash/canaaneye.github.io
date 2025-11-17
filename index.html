@@ -6,428 +6,221 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang HK", "Microsoft JhengHei", sans-serif;
-      background: radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
+      background: #0f172a;
       color: #e5e7eb;
-      line-height: 1.6;
+      line-height: 1.7;
+      padding-bottom: 40px;
     }
 
-    .page {
-      max-width: 1080px;
-      margin: 32px auto 40px;
-      padding: 0 16px;
-    }
+    .page { max-width: 1080px; margin: 24px auto; padding: 0 16px; }
 
     .card {
-      background: rgba(15, 23, 42, 0.96);
+      background: #1e293b;
       border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
-      padding: 26px 22px 28px;
-      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148,163,184,0.3);
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.45);
     }
 
     header h1 {
-      font-size: 2rem;
+      font-size: 1.9rem;
       margin-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    header h1 .logo-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 999px;
+    .logo-dot {
+      width: 12px; height: 12px; border-radius: 999px;
       background: linear-gradient(135deg, #38bdf8, #a855f7, #f97316);
-      box-shadow: 0 0 14px rgba(56, 189, 248, 0.9);
-      flex-shrink: 0;
+      box-shadow: 0 0 12px rgba(56,189,248,0.8);
     }
 
-    header .subtitle {
-      font-size: 0.95rem;
-      color: #9ca3af;
-      margin-bottom: 4px;
-    }
-
-    header .tagline {
-      font-size: 0.95rem;
-      color: #d1d5db;
-      margin-bottom: 16px;
-    }
-
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
+    .badge-row { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 14px; }
     .badge {
-      font-size: 0.8rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.8);
-      background: rgba(15, 23, 42, 0.9);
-      color: #e5e7eb;
+      padding: 4px 10px; border-radius:999px;
+      background:rgba(30,41,59,0.9); border:1px solid rgba(148,163,184,0.6);
+      font-size:0.8rem;
     }
+    .badge.primary { border-color:#38bdf8; }
 
-    .badge.primary {
-      border-color: rgba(56, 189, 248, 0.95);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), rgba(15, 23, 42, 0.95));
-    }
+    hr { border:none; border-top:1px dashed rgba(71,85,105,0.8); margin: 20px 0; }
 
-    hr {
-      border: none;
-      border-top: 1px dashed rgba(55, 65, 81, 0.9);
-      margin: 18px 0;
-    }
+    h2 { font-size:1.25rem; margin-bottom:10px; display:flex; gap:8px; align-items:center; }
+    h2 .icon { font-size:1.3rem; }
 
-    h2 {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    ul { margin-left:1.2rem; }
+    ul li { margin-bottom:6px; }
 
-    h2 .icon {
-      font-size: 1.25rem;
-    }
-
-    .section {
-      margin-bottom: 14px;
-    }
-
-    ul {
-      margin-left: 1.2rem;
-      margin-top: 4px;
-    }
-
-    ul li {
-      margin-bottom: 4px;
-      font-size: 0.97rem;
-    }
-
-    .note {
-      font-size: 0.9rem;
-      color: #9ca3af;
-      margin-top: 4px;
-    }
-
-    /* 課程表格 */
-    .table-wrapper {
-      margin-top: 6px;
-      overflow-x: auto;
-    }
-
+    /* --- 課程表格（電腦版） --- */
     table {
-      width: 100%;
+      width:100%;
       border-collapse: collapse;
-      margin-top: 2px;
-      font-size: 0.94rem;
+      margin-top:10px;
+      font-size:0.95rem;
     }
-
     th, td {
-      padding: 9px 10px;
-      text-align: left;
-      vertical-align: top;
+      padding: 14px 10px;
+      text-align:left;
+      vertical-align:top;
     }
-
     th {
-      background: rgba(15, 118, 110, 0.4);
-      border-bottom: 1px solid rgba(45, 212, 191, 0.6);
-      font-weight: 600;
+      background: rgba(34,197,94,0.25);
+      border-bottom: 1px solid rgba(34,197,94,0.5);
     }
-
-    tr:nth-child(even) td {
-      background: rgba(15, 23, 42, 0.96);
-    }
-
-    tr:nth-child(odd) td {
-      background: rgba(15, 23, 42, 0.86);
-    }
-
     td {
-      border-bottom: 1px solid rgba(55, 65, 81, 0.85);
+      border-bottom: 1px solid rgba(71,85,105,0.55);
     }
 
-    .lesson-title {
-      white-space: nowrap;
-      font-weight: 600;
-    }
+    /* --- 手機版：表格自動改為「直向一格一格」 --- */
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr { display:block; width:100%; }
 
-    .tools {
-      color: #a5b4fc;
-    }
+      tr { margin-bottom:18px; background: rgba(30,41,59,0.85); padding:12px; border-radius:12px; }
 
-    .outcome {
-      color: #fef3c7;
+      th { display:none; }
+
+      td {
+        border:none;
+        padding: 4px 0;
+        line-height:1.6;
+      }
+
+      td::before {
+        content: attr(data-label);
+        font-weight:600;
+        color:#38bdf8;
+        display:block;
+        margin-bottom:2px;
+      }
     }
 
     /* 報名按鈕 */
-    .signup-section {
-      margin-bottom: 16px;
-      display: flex;
-      justify-content: center;
-    }
-
+    .signup-section { text-align:center; margin: 18px 0 10px; }
     .btn-signup {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      border-radius: 999px;
-      border: none;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 600;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      color: #f9fafb;
-      box-shadow: 0 14px 30px rgba(22, 163, 74, 0.9);
-      cursor: pointer;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
-    }
-
-    .btn-signup .icon {
-      font-size: 1.2rem;
-    }
-
-    .btn-signup:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.05);
-      box-shadow: 0 18px 38px rgba(22, 163, 74, 1);
-    }
-
-    .btn-signup:active {
-      transform: translateY(0) scale(0.98);
-      box-shadow: 0 8px 18px rgba(22, 163, 74, 0.9);
-    }
-
-    /* Viewer 區域 */
-    .viewer-section {
-      margin-top: 22px;
-      padding-top: 16px;
-      border-top: 1px dashed rgba(55, 65, 81, 0.95);
-    }
-
-    .viewer-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-
-    .viewer-header-text {
-      font-size: 0.95rem;
-      color: #e5e7eb;
-    }
-
-    .btn-download {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      border: none;
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 500;
-      background: linear-gradient(135deg, #38bdf8, #4f46e5);
-      color: #f9fafb;
-      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.72);
-      cursor: pointer;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
-      white-space: nowrap;
-    }
-
-    .btn-download .icon {
-      font-size: 1.1rem;
-    }
-
-    .btn-download:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.05);
-      box-shadow: 0 14px 32px rgba(37, 99, 235, 0.9);
-    }
-
-    .btn-download:active {
-      transform: translateY(0) scale(0.98);
-      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.85);
-    }
-
-    .viewer-box {
-      border-radius: 14px;
-      border: 1px solid rgba(75, 85, 99, 0.95);
-      overflow: hidden;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
-      background: #000;
-    }
-
-    iframe {
-      width: 100%;
-      height: 780px;
-      border: none;
-      background: #111827;
-    }
-
-    .viewer-note {
-      margin-top: 8px;
-      font-size: 0.85rem;
-      color: #9ca3af;
-      text-align: center;
-    }
-
-    footer {
-      margin-top: 18px;
-      font-size: 0.8rem;
-      color: #6b7280;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 768px) {
-      .card {
-        padding: 20px 16px 22px;
-      }
-
-      header h1 {
-        font-size: 1.5rem;
-        flex-wrap: wrap;
-      }
-
-      iframe {
-        height: 560px;
-      }
+      display:inline-flex; gap:8px; align-items:center;
+      padding:10px 22px; font-size:1rem; font-weight:600;
+      text-decoration:none; color:white;
+      border-radius:999px;
+      background:linear-gradient(135deg, #22c55e, #15803d);
+      box-shadow:0 14px 30px rgba(34,197,94,0.8);
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <div class="card">
-      <header>
-        <h1>
-          <span class="logo-dot"></span>
-          AI + Programming 教會實戰課程
-        </h1>
-        <p class="subtitle">4 堂內，用 AI + GitHub，做出一份教會真係用到嘅成品。</p>
-        <p class="tagline">適合：初學者、事奉同工、小組長、導師 —— 唔識寫 code 都可以參加。</p>
 
-        <div class="badge-row">
-          <span class="badge primary">🎯 4 堂完成 1 個 MVP 成品</span>
-          <span class="badge">🤖 AI + 編輯技能</span>
-          <span class="badge">🌱 教會同工可自行維護更新</span>
+<div class="page">
+  <div class="card">
+
+    <header>
+      <h1><span class="logo-dot"></span>AI + Programming 教會實戰課程</h1>
+      <p>4 堂內，用 AI + GitHub，做出教會真係用到嘅成品。</p>
+    </header>
+
+    <div class="badge-row">
+      <span class="badge primary">🎯 4 堂完成 1 個 MVP 成品</span>
+      <span class="badge">🤖 AI + 編輯技能</span>
+      <span class="badge">🌱 教會同工可自行維護更新</span>
+    </div>
+
+    <!-- 報名 -->
+    <div class="signup-section">
+      <a class="btn-signup" href="https://forms.gle/pLa8Yqc3io3Mx4j1A" target="_blank">📝 立即報名課程</a>
+    </div>
+
+    <hr>
+
+    <h2><span class="icon">🎯</span>課程總目標（簡單版）</h2>
+    <ul>
+      <li>學識最基本、最有用嘅 5 件工具。</li>
+      <li>4 堂內完成一個教會可用嘅 MVP（影片 / PP / 教材 / APP…）。</li>
+      <li>掌握 AI + Editor + Version Control 嘅核心概念。</li>
+      <li>返到教會可以自行維護同更新，唔洗再搵 IT。</li>
+    </ul>
+
+    <h2><span class="icon">🧭</span>課程 4 堂結構（簡明版）</h2>
+
+    <table>
+      <tr>
+        <td data-label="堂數"><strong>第 1 課</strong></td>
+        <td data-label="主題">工具介紹＋示範做成品</td>
+        <td data-label="重點工具">NotebookLM、Gemini、VS Code、Copilot、GitHub</td>
+        <td data-label="成果">即場示範成品</td>
+      </tr>
+
+      <tr>
+        <td data-label="堂數"><strong>第 2 課</strong></td>
+        <td data-label="主題">發想＋小組規劃＋開做 MVP</td>
+        <td data-label="重點工具">VS Code、Copilot</td>
+        <td data-label="成果">MVP 初稿</td>
+      </tr>
+
+      <tr>
+        <td data-label="堂數"><strong>第 3 課</strong></td>
+        <td data-label="主題">展示＋回饋＋技術調整</td>
+        <td data-label="重點工具">NotebookLM、Gemini</td>
+        <td data-label="成果">MVP 改良方案</td>
+      </tr>
+
+      <tr>
+        <td data-label="堂數"><strong>第 4 課</strong></td>
+        <td data-label="主題">完成成品＋教會落地使用</td>
+        <td data-label="重點工具">GitHub（版本控制）、VS Code</td>
+        <td data-label="成果">可使用嘅最終成品</td>
+      </tr>
+    </table>
+    <!-- 課前預備工作 Viewer 區 -->
+    <div style="margin-top:22px; padding-top:16px; border-top:1px dashed rgba(71,85,105,0.8);">
+
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px;">
+        <div style="font-size:0.95rem;">
+          <strong>📄 課前預備工作（PDF 線上預覽）</strong><br>
+          上堂前建議先按入面步驟完成 Gmail／GitHub 等設定，方便第 1 課可以即刻開始實作。
         </div>
-      </header>
 
-      <!-- 報名按鈕 -->
-      <div class="signup-section">
-        <a class="btn-signup" href="https://forms.gle/pLa8Yqc3io3Mx4j1A" target="_blank">
-          <span class="icon">📝</span>
-          <span>立即報名課程（Google 表格）</span>
+        <a href="GitHub.pdf" target="_blank"
+           style="
+             display:inline-flex; align-items:center; gap:8px;
+             padding:7px 14px; border-radius:999px;
+             text-decoration:none; font-size:0.9rem; font-weight:500;
+             background:linear-gradient(135deg,#38bdf8,#4f46e5);
+             color:#f9fafb;
+             box-shadow:0 10px 22px rgba(37,99,235,0.8);
+           ">
+          <span style="font-size:1.1rem;">⬇️</span>
+          <span>下載課前預備 PDF</span>
         </a>
       </div>
 
-      <hr>
+      <div style="
+            border-radius:14px;
+            border:1px solid rgba(75,85,99,0.9);
+            overflow:hidden;
+            box-shadow:0 18px 40px rgba(0,0,0,0.8);
+            background:#020617;
+          ">
+        <!-- 直接預覽 GitHub.pdf（請確認已上載） -->
+        <iframe src="GitHub.pdf"
+                style="width:100%; height:70vh; border:none; background:#020617;">
+        </iframe>
+      </div>
 
-      <!-- 課程總目標 -->
-      <section class="section">
-        <h2><span class="icon">🎯</span>課程總目標（簡單版）</h2>
-        <ul>
-          <li>讓弟兄姊妹學識 <strong>最基本、最有用嘅 5 個工具</strong>。</li>
-          <li><strong>4 堂內</strong> 完成一個教會可用嘅 MVP 成品（影片 / PowerPoint / 教材 / 海報 / 簡單 app…）。</li>
-          <li>培養 <strong>AI + 編輯能力 + Version Control</strong> 嘅基本概念。</li>
-          <li>之後返到教會，可以自己維護同更新作品，唔洗次次搵 IT / 專業設計。</li>
-        </ul>
-      </section>
-
-      <!-- 課程 4 堂結構 -->
-      <section class="section">
-        <h2><span class="icon">🧭</span>課程 4 堂結構（簡明版）</h2>
-
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>堂數</th>
-                <th>主題</th>
-                <th>重點工具</th>
-                <th>成果</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="lesson-title">第 1 課</td>
-                <td>工具介紹＋示範做成品</td>
-                <td class="tools">NotebookLM、Gemini、VS Code、Copilot、GitHub</td>
-                <td class="outcome">即場做 1 個示範成品</td>
-              </tr>
-              <tr>
-                <td class="lesson-title">第 2 課</td>
-                <td>發想 + 小組規劃 + 開做 MVP</td>
-                <td class="tools">VS Code、Copilot</td>
-                <td class="outcome">小組 MVP 初稿</td>
-              </tr>
-              <tr>
-                <td class="lesson-title">第 3 課</td>
-                <td>展示 + 回饋 + 技術調整</td>
-                <td class="tools">NotebookLM、Gemini</td>
-                <td class="outcome">MVP 改良方案</td>
-              </tr>
-              <tr>
-                <td class="lesson-title">第 4 課</td>
-                <td>完成成品 + 教會落地使用</td>
-                <td class="tools">GitHub（版本控制）、VS Code</td>
-                <td class="outcome">可使用嘅最終成品</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <p class="note">＊每一堂都有實作，學員可以即場跟住做，返到教會可以再慢慢修改同延伸。</p>
-      </section>
-
-      <!-- 課前預備工作 Viewer 區 -->
-      <section class="viewer-section">
-        <div class="viewer-header">
-          <div class="viewer-header-text">
-            <strong>📄 課前預備工作（PDF 線上預覽）</strong><br>
-            上堂前建議先按步驟完成以下設定（GitHub / Gmail 等），方便第一課可以即刻開始實作。
-          </div>
-          <a class="btn-download" href="GitHub.pdf" target="_blank">
-            <span class="icon">⬇️</span>
-            <span>下載課前預備 PDF</span>
-          </a>
-        </div>
-
-        <div class="viewer-box">
-          <!-- 直接預覽 GitHub.pdf（由 Word 另存 PDF 上載） -->
-          <iframe src="GitHub.pdf"></iframe>
-        </div>
-
-        <p class="viewer-note">
-          如畫面未能顯示或出現錯誤：<br>
-          ① 請確認已將 Word 另存為 <code>GitHub.pdf</code> 並上載到 repo 根目錄；<br>
-          ② 檢查檔名大小寫；③ 再重新整理（Reload）此頁。
-        </p>
-      </section>
-
-      <footer>
-        <span>AI + Programming 教會實戰課程 · GitHub Pages 示範頁</span>
-        <span>內容可按教會實際需要自由調整</span>
-      </footer>
+      <p style="margin-top:8px; font-size:0.85rem; color:#9ca3af; text-align:center;">
+        如畫面未能顯示：請檢查是否已將檔案另存為 <code>GitHub.pdf</code> 並上載到此 repo 根目錄，
+        之後再重新整理（Reload）此頁。
+      </p>
     </div>
-  </div>
+
+    <div style="margin-top:18px; font-size:0.8rem; color:#6b7280; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+      <span>AI + Programming 教會實戰課程 · GitHub Pages 示範頁</span>
+      <span>內容可按教會實際需要自由調整</span>
+    </div>
+
+  </div> <!-- .card -->
+</div>   <!-- .page -->
+
 </body>
 </html>
